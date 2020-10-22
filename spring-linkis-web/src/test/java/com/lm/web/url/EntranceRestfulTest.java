@@ -71,7 +71,7 @@ public class EntranceRestfulTest {
         map.put("method",url);
         map.put("params",new HashMap<>()); //用户指定的运行服务程序的参数,必填，里面的值可以为空
         map.put("executeApplicationName","shell");//执行引擎，我用的hive
-        map.put("executionCode","echo 'test'");
+        map.put("executionCode","sh -c echo test");
         map.put("runType","shell");//当用户执行如spark服务时，可以选择python、R、SQL等,不能为空
         //因为我没有执行文件脚本，所以没有scriptPath参数
         String executeSql = "http://192.168.200.116:8088/api/rest_j/v1/entrance/execute";
@@ -91,7 +91,7 @@ public class EntranceRestfulTest {
         map.put("method",url);
         map.put("params",new HashMap<>()); //用户指定的运行服务程序的参数,必填，里面的值可以为空
         map.put("executeApplicationName","sqoop");//执行引擎，我用的hive
-        map.put("executionCode","sqoop");
+        map.put("executionCode","sh -c 'echo test'");
         map.put("runType","sqoop");//当用户执行如spark服务时，可以选择python、R、SQL等,不能为空
         //因为我没有执行文件脚本，所以没有scriptPath参数
         String executeSql = "http://192.168.200.116:8088/api/rest_j/v1/entrance/execute";
